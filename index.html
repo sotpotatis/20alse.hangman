@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hangman game</title>
+    <link rel="stylesheet" href="main.css" />
+    <!-- Super special spooky secrets library -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/fernet@0.4.0/fernetBrowser.js"
+      integrity="sha256-376TqCBv6Oo/kGdnyYAsRqxXjBgD0BTEEPXOXC/NTSs="
+      crossorigin="anonymous"
+    ></script>
+    <!--  The almighty jQuery! -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="main-content" data-loaded="false">
+      <div id="loading-screen" hidden>
+        <h1>Laddar spelet...</h1>
+      </div>
+      <div id="game">
+        <div id="heading">
+          <h1>"Hänga gubbe"</h1>
+        <p>
+          Det klassiska spelet "portat" från verkligheten till webben!
+          Innehåller över 100 000 ord, så du borde inte tröttna på ett tag.
+          Ange dina gissningar genom att klicka på tangentbordet.
+        </p>
+      </div>
+      <div id="gameplay">
+        <div id="image-wrapper">
+          <img
+            id="status-image"
+            src="https://20alse.ssis.nu/hangman/images/hangman-0.png"
+            alt="Bild som visar aktuell spelstatus"
+          />
+        </div>
+        <div id="interactions">
+          <div id="letters-wrapper" class="letter-wrapper"></div>
+          <div id="failed-letters-wrapper"class="letter-wrapper"></div>
+          <div id="buttons">
+            <button onclick="startNewGame()">Starta spel!</button>
+            <p>spelläge: <a class="game-mode-selector" onclick="setGameMode('random')">slumpvis ord</a>
+            <a class="game-mode-selector" onclick="setGameMode('daily')">dagens ord</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <script src="main_code.js"></script>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+/*
+main.css
+Main CSS for the hangman game.
+*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Main rules for content and layout */
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+button {
+    border: 0.2rem solid #ebebeb;
+    border-radius: 0.5rem;
+    background-color: #0284C7;
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 1rem
+}
+
+button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#content-wrapper {
+    display: grid;
+    grid-template-columns: 100vh;
+    column-gap: 3rem;
+}
+
+#gameplay {
+    display: grid;
+    grid-template-columns: 33vw auto;
+}
+
+.letter-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 1;
+}
+
+/* More specific applications for game elements */
+#letters-wrapper p {
+    font-size: 3rem;
+}
+/* Hide letters wrapper when it is loading content */
+#letters-wrapper[data-loading="true"]{
+    display: none;
+}
+
+#failed-letters-wrapper p {
+    font-size: 2.5rem;
+    color: gray;
+}
+
+#status-image {
+    object-fit: contain;
+    width: 100%;
+    height: auto
+}
+
+/* Game mode selectors */
+.game-mode-selector {
+    color: gray;
+    text-decoration: underline;
+}
+
+.game-mode-selector[data-active="true"]{
+    color: green;
+}
